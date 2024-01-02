@@ -7,8 +7,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import Layout from "./../components/Layout/Layout";
 import { AiOutlineReload } from "react-icons/ai";
-import banner1 from '../images/banner1.jpg'
-import banner2 from '../images/banner2.jpg'
+import banner1 from "../images/banner1.jpg";
+import banner2 from "../images/banner2.jpg";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -114,17 +114,27 @@ const HomePage = () => {
         <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src={banner1} class="d-block w-100" alt="Banner" />
+              <img src={banner1} class="d-block w-100" alt={banner1} />
             </div>
             <div class="carousel-item">
-              <img src={banner2} class="d-block w-100" alt="Banner" />
+              <img src={banner2} class="d-block w-100" alt={banner2} />
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -132,12 +142,16 @@ const HomePage = () => {
         {/* banner image */}
         {/* Featured */}
         <section className="featured">
-          <div className="container-fluid row mt-3 bg-light py-5" >
+          <div className="container-fluid row mt-3 bg-light py-5">
             <div className="col-12">
               <h1 className="text-center">Featured Products</h1>
               <div className="d-flex flex-wrap align-items-center justify-content-center">
                 {products?.slice(0, 4).map((p) => (
-                  <div className="card m-2 col-md-3" style={{ width: '19rem' }} key={p._id}>
+                  <div
+                    className="card m-2 col-md-3"
+                    style={{ width: "19rem" }}
+                    key={p._id}
+                  >
                     <img
                       src={`/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
@@ -185,7 +199,7 @@ const HomePage = () => {
           </div>
         </section>
         {/* Featured */}
-        <div className="container-fluid row mt-3 home-page mb-0"   >
+        <div className="container-fluid row mt-3 home-page mb-0">
           <div className="col-md-3 filters">
             <h4 className="text-center">Filter By Category</h4>
             <div className="d-flex flex-column">
@@ -219,10 +233,16 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-md-9 ">
-            <h1 id="products" className="text-center">All Products</h1>
+            <h1 id="products" className="text-center">
+              All Products
+            </h1>
             <div className="d-flex flex-wrap">
               {products?.map((p) => (
-                <div className="card m-1" style={{ width: "19rem " }} key={p._id}>
+                <div
+                  className="card m-1"
+                  style={{ width: "19rem " }}
+                  key={p._id}
+                >
                   <img
                     src={`/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
